@@ -853,8 +853,37 @@ footer .bottom {
 
 /* pc 500px 이하 */
 @media screen and (max-width: 500px) {
+  .visual {
+    height: 180vh;
+  }
+  .visual .titleBox .for {
+    font-size: 40px;
+    margin-left: 20px;
+  }
+  .visual .titleBox .en2 {
+    font-size: 46px;
+  }
+  .visual .textLoop ul {
+    font-size: 80px;
+    margin: 14vh 0;
+  }
+  .visual .titleBox .date {
+    margin-right: 20px;
+    font-size: 38px;
+  }
+
+  .visual .textLoop2 {
+    bottom: 135px;
+  }
+  .visual .textLoop2 ul.b {
+    top: -250px;
+  }
+
   br.mo {
     display: none;
+  }
+  .secSkills {
+    margin-top: 0;
   }
   .secSkills .textWRap ul li.en2 {
     padding-left: 10px;
@@ -874,7 +903,7 @@ footer .bottom {
 
   /* project */
   .projectVisual {
-    padding-top: 110px;
+    padding-top: 50px;
   }
   .projectVisual .inner .textBox {
     width: 100%;
@@ -906,10 +935,14 @@ footer .bottom {
   .textMotion {
     font-size: 3.6vw;
     line-height: 2.6;
-    margin: 200px 20px 150px 20px;
+    margin: 200px 20px 20px 20px;
   }
 
   .textMotion .title {
-    font-size: 6vw;
+    font-size: 12vw;
+  }
+
+  footer {
+    height: 100vh;
   }
 }

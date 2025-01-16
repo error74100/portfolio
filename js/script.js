@@ -75,24 +75,68 @@ $(function () {
 $(function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  // visual 애니메이션
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.visual .imgBox',
-        start: '60% 50%',
-        end: '150%',
-        scrub: 1,
-        pin: true,
-        // markers: true,
-      },
-    })
-    .fromTo(
-      '.visual .imgBox img',
-      { transform: 'rotateY(-40deg) rotateX(50deg)', width: '50%', opacity: '0.2' },
-      { transform: 'rotateY(0deg) rotateX(0deg)', width: '100%', opacity: '1' },
-      0
-    );
+  ScrollTrigger.matchMedia({
+    '(min-width:1024px)': function () {
+      // visual 애니메이션(desktop)
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: '.visual .imgBox',
+            start: '60% 50%',
+            end: '150%',
+            scrub: 1,
+            pin: true,
+            // markers: true,
+          },
+        })
+        .fromTo(
+          '.visual .imgBox img',
+          { transform: 'rotateY(-40deg) rotateX(50deg)', width: '50%', opacity: '0.2' },
+          { transform: 'rotateY(0deg) rotateX(0deg)', width: '100%', opacity: '1' },
+          0
+        );
+    },
+    '(min-width: 801px) and (max-width: 1023px)': function () {
+      // visual 애니메이션(중간)
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: '.visual .imgBox',
+            start: '60% 50%',
+            end: '150%',
+            scrub: 1,
+            pin: true,
+            // markers: true,
+          },
+        })
+        .fromTo(
+          '.visual .imgBox img',
+          { transform: 'rotateY(-40deg) rotateX(50deg)', width: '50%', opacity: '0.2' },
+          { transform: 'rotateY(0deg) rotateX(0deg)', width: '70%', opacity: '1' },
+          0
+        );
+    },
+    '(max-width: 800px) ': function () {
+      // visual 애니메이션(mobile)
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: '.visual .imgBox',
+            start: '300% 50%',
+            end: '300%',
+            scrub: 1,
+            pin: true,
+            // markers: true,
+          },
+        })
+        .fromTo(
+          '.visual .imgBox img',
+          { transform: 'translate3d(0px, 200px, 0px) rotateY(-40deg) rotateX(50deg)', width: '10%', opacity: '0.2' },
+          { transform: 'translate3d(0px, 200px, 0px) rotateY(0deg) rotateX(0deg)', width: '30%', opacity: '1' },
+          0
+        );
+    },
+  });
 });
 
 // project 애니메이션
