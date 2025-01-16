@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J.hyun portfolio</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/splitting.min.js"></script>
+    <script src="./js/jquery.scrolla.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./js/jquery.simplyscroll.min.js"></script>
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <header>
+        <a href="index.html" class="logo en"><span class="en2">J.hyun</span> Portfolio</a>
+        <nav class="gnb en">
+          <ul>
+            <li><a href="#Visual" data-link="Visual" data-splitting>Home</a></li>
+            <li><a href="#Skill" data-link="Skill" data-splitting>Skill</a></li>
+            <li><a href="#Project" data-link="Project" data-splitting>Project</a></li>
+            <li><a href="#Contact" data-link="Contact" data-splitting>Contact</a></li>
+          </ul>
+        </nav>
+        <a href="javascript:void(0);" class="menuOpen"><span class="a"></span><span class="b"></span></a>
+      </header>
+
+      <section class="visual en" id="Visual">
+        <div class="imgBox">
+          <img src="./img/picture01.jpg" alt="picture01" />
+        </div>
+        <div class="titleBox">
+          <p class="for">Website <span class="en2">for</span></p>
+          <div class="textLoop">
+            <ul>
+              <li>J.hyun Portfolio Process</li>
+              <li>J.hyun Portfolio Process</li>
+              <li>J.hyun Portfolio Process</li>
+              <li>J.hyun Portfolio Process</li>
+              <li>J.hyun Portfolio Process</li>
+            </ul>
+          </div>
+          <p class="date"><span class="en2">Publishing</span> 2025</p>
+        </div>
+
+        <div class="textLoop2">
+          <ul class="a">
+            <li>Portfolio Publishing Process</li>
+            <li>Portfolio Publishing Process</li>
+            <li>Portfolio Publishing Process</li>
+            <li>Portfolio Publishing Process</li>
+          </ul>
+          <ul class="b">
+            <li>Portfolio Publishing Process</li>
+            <li>Portfolio Publishing Process</li>
+            <li>Portfolio Publishing Process</li>
+            <li>Portfolio Publishing Process</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="secSkills animate" data-animate="motion" id="Skill">
+        <div class="textWrap">
+          <div class="title en">
+            <p>My <span class="en2">Skill</span></p>
+          </div>
+
+          <ul>
+            <li><p>Photoshop</p></li>
+            <li class="en2"><p>Figma</p></li>
+            <li><p>html/css</p></li>
+            <li class="en2"><p>Javascript</p></li>
+            <li><p>Jquery</p></li>
+            <li class="en2"><p>React</p></li>
+          </ul>
+        </div>
+
+        <ul class="list">
+          <li><img src="./img/logo_photoshop.jpg" alt="photoshop" /></li>
+          <li><img src="./img/logo_figma.jpg" alt="Figma" /></li>
+          <li><img src="./img/logo_html.jpg" alt="html" /></li>
+          <li><img src="./img/logo_css.jpg" alt="css" /></li>
+          <li><img src="./img/logo_javascript.jpg" alt="Javascript" /></li>
+          <li><img src="./img/logo_jquery.jpg" alt="Jquery" /></li>
+          <li><img src="./img/logo_react.jpg" alt="React" /></li>
+        </ul>
+      </section>
+
+      <!-- project(title) -->
+      <section class="projectVisual en animate" data-animate="motion" id="Project">
+        <div class="inner">
+          <div class="textBox">
+            <p class="title">My<span class="en2">Project</span></p>
+            <p class="subTitle">
+              다양한 프로젝트를 통해 실용적인 웹 경험을 제공한 작업물들입니다. 각 프로젝트를 클릭하여 자세히
+              확인해보세요.
+            </p>
+            <p class="text">
+              These works provide practical web experiences through various projects. Click on each project to see
+              detailed information.
+            </p>
+          </div>
+
+          <div class="aniBox">
+            <img src="./img/readmore-btn-white.png" class="spin" alt="spin" />
+            <img src="./img/icon-arrow-white.png" class="arrow" alt="arrow" />
+          </div>
+        </div>
+      </section>
+
+      <!-- project -->
+      <section class="project">
+        <div class="counter en"><span class="now"></span><span class="all en2"> / 8</span></div>
+        <ul>
+          <li>
+            <a href="https://info.delivera.co.kr" target="_blank">
+              <div class="num" data-text="1"></div>
+              <div class="imgBox"><img src="./img/portfolio1.jpg" alt="portfolio1" /></div>
+              <div class="textBox">
+                <p class="title">배달시대</p>
+                <p class="text en2">Web Publishing</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://banknloan.kr" target="_blank">
+              <div class="num" data-text="2"></div>
+              <div class="imgBox"><img src="./img/portfolio2.jpg" alt="portfolio2" /></div>
+              <div class="textBox">
+                <p class="title">뱅크앤론</p>
+                <p class="text en2">Web Publishing</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://ghcon.co.kr" target="_blank">
+              <div class="num" data-text="3"></div>
+              <div class="imgBox"><img src="./img/portfolio3.jpg" alt="portfolio3" /></div>
+              <div class="textBox">
+                <p class="title">GH건설산업</p>
+                <p class="text en2">Web Publishing</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://theproud.co.kr" target="_blank">
+              <div class="num" data-text="4"></div>
+              <div class="imgBox"><img src="./img/portfolio4.jpg" alt="portfolio4" /></div>
+              <div class="textBox">
+                <p class="title">더프라우드 창동</p>
+                <p class="text en2">Web Publishing</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://hessededu.com" target="_blank">
+              <div class="num" data-text="5"></div>
+              <div class="imgBox"><img src="./img/portfolio5.jpg" alt="portfolio5" /></div>
+              <div class="textBox">
+                <p class="title">헤세드에듀</p>
+                <p class="text en2">Web Publishing</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://osteosys.com" target="_blank">
+              <div class="num" data-text="6"></div>
+              <div class="imgBox"><img src="./img/portfolio6.jpg" alt="portfolio6" /></div>
+              <div class="textBox">
+                <p class="title">오스테오시스</p>
+                <p class="text en2">Web Publishing</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="http://panel.erumpay.co.kr" target="_blank">
+              <div class="num" data-text="7"></div>
+              <div class="imgBox"><img src="./img/portfolio7.jpg" alt="portfolio7" /></div>
+              <div class="textBox">
+                <p class="title">동네한바퀴</p>
+                <p class="text en2">Web Publishing</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://k-debate.kr" target="_blank">
+              <div class="num" data-text="8"></div>
+              <div class="imgBox"><img src="./img/portfolio8.jpg" alt="portfolio8" /></div>
+              <div class="textBox">
+                <p class="title">K디베이트코칭학원</p>
+                <p class="text en2">Web Publishing</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="textMotion">
+        <p class="title">The<span class="en2"> Goal</span></p>
+        <br />
+
+        <span class="mask">
+          <span class="text">
+            팀의 일원으로서 협력과 소통을 중시 합니다.<br />
+            견고한 마크업을 바탕으로 효율적인 CSS 코드를 작성하고,<br />
+            JavaScript 및 jQuery를 활용합니다.<br />
+            이후 이를 기반으로, 프론트엔드 개발자가 되는게 목표이며<br />
+            React 프레임워크와 필요한 라이브러리를 배우며<br />
+            끊임없이 성장하는 도전적인 퍼블리셔로서 발전하겠습니다.
+          </span>
+        </span>
+      </section>
+
+      <!-- footer -->
+      <footer id="Contact">
+        <div class="textWrap en">
+          <p class="title">Want To <span class="en2">Work Together?</span></p>
+          <p class="contact en2">Contact</p>
+          <p><a href="mailto:abcd@gmail.com">error7410@hanmail.net</a></p>
+        </div>
+        <div class="bottom en">
+          <p class="copyright">J.hyun &#169;2025</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

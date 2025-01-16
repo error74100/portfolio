@@ -1,0 +1,915 @@
+@charset "utf-8";
+
+/* 구글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+KR:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('./reset.css');
+
+/* 영어폰트 */
+.en {
+  font-family: 'Public Sans', serif;
+}
+.en2 {
+  font-family: 'Cormorant Infant', serif;
+}
+
+/* layout */
+body {
+  font-family: 'Noto Sans Kr', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+/* header */
+header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+header.active {
+  transform: translateY(-100%);
+}
+header .logo {
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+}
+header .menuOpen {
+  display: none;
+  transition: 0.3s;
+}
+.gnb ul {
+  display: flex;
+  justify-content: space-between;
+}
+.gnb ul li {
+  margin-left: 70px;
+}
+.gnb ul li a {
+  display: block;
+}
+
+/* gnb hover효과 */
+.gnb ul li a .char {
+  display: inline-block;
+  position: relative;
+  color: transparent;
+  overflow: hidden;
+}
+.gnb ul li a .char:before,
+.gnb ul li a .char:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  color: #fff;
+  content: attr(data-char);
+  transition: transform 0.35s;
+  transition-delay: calc(30ms * var(--char-index));
+}
+
+.gnb ul li a .char:before {
+  transform: translateY(100%);
+}
+.gnb ul li a:hover .char:before {
+  transform: translateY(0);
+  opacity: 1;
+}
+.gnb ul li a:hover .char:after {
+  transform: translateY(-100%);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* section.visual */
+.visual {
+  height: 250vh;
+  position: relative;
+}
+.visual .imgBox {
+  width: 1000px;
+  position: absolute;
+  left: 50%;
+  top: 3%;
+  transform: translateX(-50%);
+  perspective: 1500px;
+  text-align: center;
+}
+.visual .imgBox img {
+  width: 100%;
+}
+.visual .titleBox {
+  width: 100%;
+  position: absolute;
+  top: 12%;
+  left: 0;
+  line-height: 1.4;
+}
+.visual .titleBox .for {
+  font-size: 50px;
+  margin-left: 100px;
+}
+.visual .titleBox .en2 {
+  font-size: 64px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.visual .titleBox .date {
+  text-align: right;
+  margin-right: 100px;
+  font-size: 48px;
+}
+.visual .textLoop ul {
+  display: flex;
+  white-space: nowrap;
+  font-size: 145px;
+  letter-spacing: -2px;
+}
+.visual .textLoop ul li {
+  animation: textLoop 7s linear infinite;
+  padding: 0 20px;
+}
+@keyframes textLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.visual .textBox {
+  width: 45%;
+  position: absolute;
+  right: 5%;
+  top: 40%;
+}
+.visual .textBox ul .top {
+  font-size: 24px;
+  border-bottom: 1px solid #fff;
+}
+.visual .textBox ul .top h2 {
+  font-weight: normal;
+}
+.visual .textBox ul li {
+  display: flex;
+  margin-bottom: 12px;
+}
+.visual .textBox ul li h3 {
+  font-weight: normal;
+  font-size: 13px;
+  width: 130px;
+}
+.visual .textBox ul li .en2 {
+  font-size: 22px;
+}
+.visual .textBox ul li.mode .btnBox a {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0 42px;
+  margin-right: 5px;
+}
+.visual .textBox ul li.mode .btnBox a:hover,
+.visual .textBox ul li.mode .btnBox a:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.visual .textLoop2 {
+  position: absolute;
+  bottom: 300px;
+  left: -20px;
+  background-color: yellowgreen;
+}
+.visual .textLoop2 ul {
+  display: flex;
+  white-space: nowrap;
+  font-size: 70px;
+  letter-spacing: -2px;
+  background-color: rgba(255, 255, 255, 1);
+  color: #000;
+  position: absolute;
+  padding: 10px 0;
+}
+.visual .textLoop2 ul li {
+  padding: 0 20px;
+}
+.visual .textLoop2 ul.a {
+  transform: rotate(7deg);
+  background-color: rgba(255, 255, 255, 0);
+  color: #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.visual .textLoop2 ul.b {
+  transform: rotate(-7deg);
+  top: -135px;
+}
+
+/* animation */
+.visual .textLoop2 ul.a li {
+  animation: textLoop 7s linear infinite;
+}
+.visual .textLoop2 ul.b li {
+  animation: textLoop2 7s linear infinite;
+}
+
+@keyframes textLoop2 {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* textMotion */
+.textMotion {
+  font-size: 3.6vw;
+  line-height: 1.6;
+  margin: 300px 20px 500px 20px;
+}
+.textMotion .mask {
+  display: block;
+}
+.textMotion .mask .text {
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.2);
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#fff, #fff);
+  background-size: 0 100%;
+}
+.textMotion .title {
+  font-size: 90px;
+}
+
+/* section.secSkills */
+.secSkills {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin-top: 200px;
+}
+.secSkills .textWrap {
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.secSkills .textWrap .title {
+  font-size: 28px;
+  padding-left: 10px;
+}
+.secSkills .textWrap ul li {
+  font-size: 100px;
+  line-height: 1.2;
+}
+.secSkills .textWrap ul li.en2 {
+  padding-left: 5px;
+}
+
+/* visual */
+.projectVisual {
+  padding-top: 200px;
+  height: 100vh;
+}
+.projectVisual .inner {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectVisual .inner .textBox {
+  width: 60%;
+  line-height: 1.4;
+}
+.projectVisual .inner .textBox .title {
+  font-size: 180px;
+}
+.projectVisual .inner .textBox .title .en2 {
+  font-size: 220px;
+}
+.projectVisual .inner .textBox .subTitle {
+  font-size: 30px;
+  margin: 30px 0;
+}
+.projectVisual .inner .aniBox {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  margin-top: 300px;
+}
+.projectVisual .inner .aniBox img {
+  width: 100%;
+  position: absolute;
+  display: inline-block;
+}
+.projectVisual .inner .aniBox img.spin {
+  left: 0;
+  top: 0;
+  animation-name: spin;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.projectVisual .inner .aniBox img.arrow {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width: 20%;
+}
+
+/* visual.motion 붙을때 애니매이션 */
+.projectVisual.animate__motion .inner .textBox {
+  transform: translate3d(0, 0, 0);
+}
+.projectVisual.animate__motion .inner .textBox p {
+  animation-name: textAni3;
+  animation-duration: 1s;
+  word-break: keep-all;
+}
+
+@keyframes textAni {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+    transform: translate3d(0, -90px, 0) skewY(-10deg);
+    transform-origin: top left;
+  }
+}
+
+@keyframes textAni3 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+}
+
+.projectVisual.animate__motion .inner .textBox p:nth-child(2) {
+  animation-duration: 1.2s;
+}
+.projectVisual.animate__motion .inner .textBox p:nth-child(3) {
+  animation-duration: 1.4s;
+}
+
+/* project */
+.project {
+  height: 100vh;
+  position: relative;
+}
+.project ul {
+  display: flex;
+  padding: 8% 30%;
+}
+.project ul li {
+  width: 700px;
+  padding: 100px;
+  flex-shrink: 0 !important;
+}
+/* flex 가로 자동 축소됨, flex-shrink:0 해야 자동 축소 방지됨 */
+
+.project ul li a {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.project ul li a .imgBox {
+  position: relative;
+}
+.project ul li a .imgBox img {
+  width: 100%;
+}
+
+.project ul li a .textBox {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.project ul li a .textBox .title {
+  font-size: 60px;
+  text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
+}
+.project ul li a .textBox .text {
+  font-size: 20px;
+  padding-left: 5px;
+  text-shadow: 3px 0px 10px rgba(0, 0, 0, 1);
+}
+
+/* hover */
+/* 화살표와 테두리 */
+.project ul li a .imgBox:before {
+  content: '';
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  border: 1px solid #ddd;
+  background: url(../img/icon-arrow.png) no-repeat center/30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 2;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+/* spin 이미지와 배경색 */
+.project ul li a .imgBox:after {
+  content: '';
+  width: 0%;
+  height: 0%;
+  border-radius: 100%;
+  border: 1px solid #ddd;
+  background: #fff url(../img/readmore-btn.png) no-repeat center/130px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation-name: spin2;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* hover 효과 */
+.project ul li a .imgBox:hover img {
+  filter: brightness(50%);
+  transition: 0.3s;
+}
+.project ul li a .imgBox:hover:before {
+  opacity: 1;
+}
+.project ul li a .imgBox:hover:after {
+  opacity: 1;
+  width: 140px;
+  height: 140px;
+}
+
+@keyframes spin2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* inset을 활용해서 .imgBox 잘라내기 */
+.project ul li a .imgBox {
+  clip-path: inset(30%);
+}
+.project ul li a .textBox {
+  opacity: 0;
+}
+
+/* counter */
+.project .counter {
+  position: absolute;
+  font-size: 50px;
+  right: 8%;
+  bottom: 8%;
+  letter-spacing: -3px;
+  color: #fff;
+  text-align: right;
+}
+.project .counter .now {
+  font-size: 42px;
+}
+.project .counter {
+  width: 100%;
+}
+/* ============================== */
+
+/* simplyScroll */
+.simply-scroll .simply-scroll-clip {
+  overflow: hidden;
+  transform: rotate(5deg) translate(150%, 400px) scale(1.1);
+  opacity: 0;
+}
+.simply-scroll .simply-scroll-clip .simply-scroll-list li {
+  float: left;
+  width: 400px;
+  filter: brightness(50%);
+}
+.simply-scroll .simply-scroll-clip .simply-scroll-list li img {
+  width: 100%;
+}
+
+/* simplyScroll.motion */
+.secSkills.animate__motion .simply-scroll-clip {
+  transform: rotate(5deg) translate(0, 400px) scale(1.1);
+  opacity: 1;
+}
+.secSkills.animate__motion .btnWrap {
+  right: 50%;
+  transition: 1.2s;
+}
+.secSkills.animate__motion .textWrap ul li p {
+  animation-name: textAni;
+  animation-duration: 1.3s;
+}
+
+/* footer */
+footer {
+  position: relative;
+  height: 100vh;
+}
+footer .textWrap {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  padding: 0 60px;
+  font-size: 110px;
+  line-height: 1.4;
+  letter-spacing: -1px;
+}
+footer .textWrap .title {
+  font-size: 20px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+}
+footer .textWrap .contact {
+  margin-bottom: 10px;
+}
+footer .textWrap a {
+  display: block;
+  margin-top: -30px;
+}
+footer .bottom {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 60px;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+/* responsiveWeb */
+/* pc 1650~1301px */
+@media screen and (max-width: 1650px) {
+  .secSkills.animate__motion .btnWrap {
+    right: 10%;
+  }
+
+  .projectVisual {
+    padding-top: 120px;
+  }
+  .projectVisual .inner {
+    width: 90%;
+  }
+  .projectVisual .inner .textBox {
+    transform: translate(0, 0);
+  }
+  .project ul {
+    padding: 10% 20%;
+  }
+}
+
+/* pc 1300~1025px */
+@media screen and (max-width: 1300px) {
+  footer .textWrap a {
+    font-size: 84px;
+  }
+}
+
+/* pc 1024~801px */
+@media screen and (max-width: 1024px) {
+  .secSkills .textWrap {
+    width: 85%;
+  }
+  .secSkills .textWrap ul li {
+    font-size: 12vw;
+  }
+  footer .textWrap {
+    font-size: 12vw;
+  }
+  footer .textWrap .contact {
+    margin-bottom: 25px;
+  }
+  footer .textWrap a {
+    font-size: 8vw;
+  }
+  footer .bottom {
+    font-size: 20px;
+  }
+
+  /* project */
+  .projectVisual .inner .textBox {
+    width: 50%;
+  }
+  .projectVisual .inner .textBox .title {
+    font-size: 20vw;
+  }
+  .projectVisual .inner .textBox .title .en2 {
+    font-size: 23vw;
+  }
+  .projectVisual .inner .aniBox {
+    bottom: 10%;
+  }
+
+  .project {
+    height: auto;
+  }
+  .project ul {
+    padding: 0 5%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .project ul li {
+    padding: 0;
+    width: 45%;
+    margin-top: 150px;
+  }
+  .project ul li:nth-child(2n) {
+    margin-top: 0;
+  }
+  .project ul li a .imgBox {
+    clip-path: none;
+  }
+  .project ul li a .textBox {
+    opacity: 1;
+    position: static;
+  }
+  .project ul li a .textBox .title {
+    font-size: 35px;
+  }
+  .project ul li a .textBox .text {
+    font-size: 16px;
+  }
+  .project ul li a .imgBox:before,
+  .project ul li a .imgBox:after {
+    display: none;
+  }
+  .project ul li a:hover .imgBox img {
+    filter: brightness(100%);
+  }
+
+  .project .counter {
+    display: none;
+  }
+}
+
+/* pc 800~501px */
+@media screen and (max-width: 800px) {
+  .wrap {
+    font-size: 16px;
+  }
+  header {
+    padding: 3% 5%;
+  }
+  header .menuOpen {
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 10px;
+    margin-top: 10px;
+    transition: top 0.5s;
+    z-index: 101;
+  }
+  header .menuOpen span.a {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+  }
+  header .menuOpen span.b {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+  }
+  .gnb {
+    position: fixed;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background: #fff;
+    left: 0;
+    top: -100%;
+    color: #000;
+    z-index: 100;
+    transition: top 0.5s;
+  }
+  .gnb ul {
+    display: block;
+    width: 80%;
+    margin: 20% auto;
+  }
+  .gnb ul li {
+    margin-left: 0;
+  }
+  .gnb ul li a {
+    font-size: 12vw;
+    line-height: 1.4;
+    letter-spacing: -1px;
+  }
+  .gnb ul li a .char {
+    color: #000;
+    overflow: inherit;
+  }
+  .gnb ul li a .char:before,
+  .gnb ul li a .char:after {
+    display: none;
+  }
+
+  /* menuOpen */
+  .gnb.on {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+  }
+  body.on {
+    overflow: hidden;
+  }
+  header .menuOpen.on span.a {
+    background: #000;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  header .menuOpen.on span.b {
+    background: #000;
+    transform: rotate(-45deg) translate(2px, -2px);
+  }
+
+  .secSkills .btnWrap a {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* hover 효과 제거 */
+  .secSkills .btnWrap a:before,
+  .secSkills .btnWrap a:hover:before {
+    display: none;
+  }
+  .secSkills .btnWrap a:hover {
+    border: 1px solid #fff;
+  }
+  .secSkills .btnWrap a img:nth-child(2) {
+    display: none;
+  }
+  .secSkills.animate__motion .simply-scroll .simply-scroll-clip {
+    transform: rotate(10deg) translate(20%, 400px) scale(1.2);
+  }
+  .simply-scroll .simply-scroll-clip .simply-scroll-list li {
+    width: 200px;
+  }
+
+  footer {
+    height: 50vh;
+  }
+  footer .textWrap {
+    width: 90%;
+    padding: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  footer .textWrap .title {
+    padding-left: 0;
+  }
+  footer .textWrap .contact {
+    margin-bottom: 40px;
+  }
+
+  /* project */
+  .projectVisual {
+    height: auto;
+    padding-bottom: 80px;
+  }
+  .projectVisual .inner .textBox .subTitle {
+    font-size: 25px;
+    margin: 0 0 30px;
+  }
+  .projectVisual .inner .textBox {
+    padding-left: 5px;
+  }
+  .projectVisual .inner .textBox .text {
+    width: 50%;
+  }
+  .projectVisual .inner .aniBox {
+    width: 200px;
+    height: 200px;
+    margin-top: 460px;
+    bottom: -20%;
+  }
+  .project ul li {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}
+
+/* pc 500px 이하 */
+@media screen and (max-width: 500px) {
+  br.mo {
+    display: none;
+  }
+  .secSkills .textWRap ul li.en2 {
+    padding-left: 10px;
+  }
+  .secSkills.animate__motion .simply-scroll .simply-scroll-clip {
+    transform: rotate(10deg) translate(20%, 300px) scale(1.2);
+  }
+
+  footer .bottom {
+    font-size: 17px;
+    padding: 0 5%;
+  }
+
+  .gnb ul li a {
+    line-height: 2.4;
+  }
+
+  /* project */
+  .projectVisual {
+    padding-top: 110px;
+  }
+  .projectVisual .inner .textBox {
+    width: 100%;
+  }
+  .projectVisual .inner .textBox .title {
+    font-size: 14vw;
+  }
+  .projectVisual .inner .textBox .title .en2 {
+    font-size: 17vw;
+  }
+  .projectVisual .inner .textBox .subTitle {
+    font-size: 20px;
+  }
+  .projectVisual .inner .textBox .text {
+    width: 100%;
+  }
+  .projectVisual .inner .aniBox {
+    display: none;
+  }
+  .project ul li a .textbox .title {
+    font-size: 28px;
+  }
+
+  .secSkills .textWrap .title {
+    padding-left: 4px;
+  }
+
+  /* textMotion */
+  .textMotion {
+    font-size: 3.6vw;
+    line-height: 2.6;
+    margin: 200px 20px 150px 20px;
+  }
+
+  .textMotion .title {
+    font-size: 6vw;
+  }
+}
