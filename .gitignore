@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # PSD
-PSD/*
+PSD/
