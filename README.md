@@ -39,7 +39,7 @@
 
 ## 포트폴리오 사이트 URL
 
-🔗 <a href="https://portfolio-jhyun.vercel.app/" target="_blank" rel="noopener noreferrer">https://portfolio-jhyun.vercel.app/</a>
+🔗 [https://portfolio-jhyun.vercel.app/](https://portfolio-jhyun.vercel.app/)
 
 ## Contact
 
