@@ -17,6 +17,7 @@ body {
   font-family: 'Noto Sans Kr', sans-serif;
   font-size: 16px;
   line-height: 1.6;
+  word-break: keep-all;
 }
 .wrap {
   position: relative;
@@ -326,6 +327,43 @@ header .menuOpen {
 }
 .toyProject .adminBox .gallery li img:hover {
   opacity: 0.8;
+}
+
+.toyProject .siteInfo {
+  text-align: left;
+  max-width: 960px;
+  margin: 100px auto 0;
+}
+.toyProject .siteInfo .name {
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-weight:700;
+}
+.toyProject .siteInfo .desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+}
+.toyProject .siteInfo .infoGroup {
+  margin-top: 35px;
+}
+.toyProject .siteInfo .infoGroup .groupTitle {
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight:700;
+}
+.toyProject .siteInfo .infoGroup ul {
+  padding-left: 18px;
+}
+.toyProject .siteInfo .infoGroup ul li {
+  list-style: disc;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+}
+.toyProject .siteInfo .infoGroup ul li strong {
+  color: #fff;
+  font-weight: 600;
 }
 
 /* 이미지 확대 모달 */

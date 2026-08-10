@@ -242,6 +242,49 @@
             <li><img src="./img/admin_screenshot_4.jpg" alt="Moxen 관리자 페이지 캡쳐 4" /></li>
           </ul>
         </div>
+
+        <div class="siteInfo">
+          <p class="name en2">Moxen Project</p>
+          <p class="desc">
+            React + TypeScript + Vite 기반으로 제작된 숙박시설(펜션/호텔) 소개 및 예약 문의 웹사이트입니다.<br />방문객을
+            위한 시설 소개 페이지와 QnA 게시판, 회원 인증 기능을 제공하며, 운영자를 위한 관리자 대시보드를 포함하고
+            있습니다.
+          </p>
+
+          <div class="infoGroup">
+            <p class="groupTitle">기술 스택</p>
+            <ul>
+              <li><strong>Framework</strong> : React 19, TypeScript, Vite</li>
+              <li><strong>Routing</strong> : React Router 7</li>
+              <li><strong>Backend / DB / Auth</strong> : Supabase (@supabase/supabase-js)</li>
+              <li><strong>State / Data</strong> : Zustand, TanStack Query (React Query)</li>
+              <li><strong>Styling / UI</strong> : Tailwind CSS 4, shadcn/ui (Radix UI 기반), lucide-react</li>
+              <li><strong>기타</strong> : Chart.js (관리자 대시보드 통계), Embla Carousel, next-themes, Sonner(toast)</li>
+            </ul>
+          </div>
+
+          <div class="infoGroup">
+            <p class="groupTitle">주요 기능 - 사용자 페이지</p>
+            <ul>
+              <li>메인, 소개(About), 안내(Information), 부대시설(Facilities), 주변환경(Environment), 오시는 길(Map) 소개 페이지</li>
+              <li>QnA 게시판 : 문의 작성/수정/삭제, 댓글(답변) 기능</li>
+              <li>회원가입 / 로그인(이메일, Google·Github 소셜 로그인) / 비밀번호 찾기·재설정</li>
+              <li>마이페이지(프로필 조회 및 수정)</li>
+              <li>FAQ(자주 묻는 질문) 노출</li>
+            </ul>
+          </div>
+
+          <div class="infoGroup">
+            <p class="groupTitle">주요 기능 - 관리자 페이지 (/admin)</p>
+            <ul>
+              <li>관리자 전용 라우트 가드 (AdminOnlyLayout)</li>
+              <li>대시보드 : 가입자·문의 현황 통계 및 차트(Chart.js)</li>
+              <li>회원 관리</li>
+              <li>QnA(문의) 관리</li>
+              <li>FAQ 관리 : 등록/수정/삭제 및 공개 여부(공개/비공개) 설정</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <!-- 이미지 확대 모달 -->
