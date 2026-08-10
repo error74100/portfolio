@@ -265,3 +265,26 @@ $(function () {
     }
   );
 });
+
+// 관리자 페이지 캡쳐 이미지 확대 모달
+$(function () {
+  const $modal = $('.imgModal');
+  const $modalImg = $modal.find('img');
+
+  $('.toyProject .gallery img').on('click', function () {
+    $modalImg.attr('src', $(this).attr('src')).attr('alt', $(this).attr('alt'));
+    $modal.addClass('on');
+  });
+
+  $modal.on('click', function (e) {
+    if (e.target === this || $(e.target).hasClass('close')) {
+      $modal.removeClass('on');
+    }
+  });
+
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      $modal.removeClass('on');
+    }
+  });
+});

@@ -269,6 +269,97 @@ header .menuOpen {
   font-size: 90px;
 }
 
+/* section.toyProject */
+.toyProject {
+  text-align: center;
+  margin: 0 20px 300px 20px;
+}
+.toyProject .title {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+.toyProject .text {
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+}
+.toyProject .link {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 14px 42px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.toyProject .link:hover,
+.toyProject .link:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.toyProject .testInfo {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+}
+.toyProject .adminBox {
+  margin-top: 80px;
+}
+.toyProject .adminBox .subTitle {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.toyProject .adminBox .desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+.toyProject .adminBox .gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.toyProject .adminBox .gallery li img {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.toyProject .adminBox .gallery li img:hover {
+  opacity: 0.8;
+}
+
+/* 이미지 확대 모달 */
+.imgModal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.imgModal.on {
+  opacity: 1;
+  visibility: visible;
+}
+.imgModal img {
+  max-width: 90%;
+  max-height: 85vh;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.imgModal .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 44px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+}
+
 /* section.secSkills */
 .secSkills {
   width: 100%;
@@ -698,6 +789,11 @@ footer .bottom {
   .project .counter {
     display: none;
   }
+
+  /* toyProject */
+  .toyProject .adminBox .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* pc 800~501px */
@@ -850,6 +946,17 @@ footer .bottom {
     width: 100%;
     margin-top: 0;
     margin-bottom: 40px;
+  }
+
+  /* toyProject */
+  .toyProject {
+    margin: 0 20px 150px 20px;
+  }
+  .toyProject .title {
+    font-size: 12vw;
+  }
+  .toyProject .adminBox .gallery {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
