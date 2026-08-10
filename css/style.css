@@ -419,6 +419,7 @@ header .menuOpen {
 }
 .project ul li a .imgBox {
   position: relative;
+  z-index: 2;
 }
 .project ul li a .imgBox img {
   width: 100%;
@@ -428,6 +429,7 @@ header .menuOpen {
   position: absolute;
   left: 0;
   bottom: 10%;
+  z-index: 2;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 .project ul li a .textBox .title {
@@ -441,8 +443,8 @@ header .menuOpen {
 }
 
 /* hover */
-/* 화살표와 테두리 */
-.project ul li a .imgBox:before {
+/* 화살표와 테두리 (imgBox의 clip-path에 영향받지 않도록 a의 가상요소로 배치, textBox보다 위) */
+.project ul li a:before {
   content: '';
   width: 140px;
   height: 140px;
@@ -453,13 +455,13 @@ header .menuOpen {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
-  z-index: 2;
+  z-index: 4;
   transition: all 0.3s;
   opacity: 0;
 }
 
 /* spin 이미지와 배경색 */
-.project ul li a .imgBox:after {
+.project ul li a:after {
   content: '';
   width: 0%;
   height: 0%;
@@ -470,7 +472,7 @@ header .menuOpen {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 3;
   animation-name: spin2;
   animation-duration: 10s;
   animation-timing-function: linear;
@@ -478,14 +480,14 @@ header .menuOpen {
 }
 
 /* hover 효과 */
-.project ul li a .imgBox:hover img {
+.project ul li a:hover .imgBox img {
   filter: brightness(50%);
   transition: 0.3s;
 }
-.project ul li a .imgBox:hover:before {
+.project ul li a:hover:before {
   opacity: 1;
 }
-.project ul li a .imgBox:hover:after {
+.project ul li a:hover:after {
   opacity: 1;
   width: 140px;
   height: 140px;
@@ -685,8 +687,8 @@ footer .bottom {
   .project ul li a .textBox .text {
     font-size: 16px;
   }
-  .project ul li a .imgBox:before,
-  .project ul li a .imgBox:after {
+  .project ul li a:before,
+  .project ul li a:after {
     display: none;
   }
   .project ul li a:hover .imgBox img {

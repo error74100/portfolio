@@ -174,7 +174,8 @@ $(function () {
               // markers: true,
             },
           })
-          .to(imgBox, { 'clip-path': 'inset(0%)', ease: 'none', duration: 1 }, 0);
+          .to(imgBox, { 'clip-path': 'inset(0%)', ease: 'none', duration: 1 }, 0)
+          .to(imgBox.querySelector('img'), { scale: 1.5, ease: 'none', duration: 1 }, 0);
 
         //02-2:imgBox커지는 애니매이션 -> 화면 중앙에서 작아지기 시작해서 왼쪽에서 끝나는 애니
         gsap
@@ -188,7 +189,8 @@ $(function () {
               // markers: true,
             },
           })
-          .to(imgBox, { 'clip-path': 'inset(30%)', ease: 'none', duration: 1 }, 0);
+          .to(imgBox, { 'clip-path': 'inset(30%)', ease: 'none', duration: 1 }, 0)
+          .to(imgBox.querySelector('img'), { scale: 1, ease: 'none', duration: 1 }, 0);
       });
 
       //03. .textBox모션
